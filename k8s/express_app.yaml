@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app-deployment
+  name: my-express-app-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: my-app
+      app: my-express-app
   template:
     metadata:
       labels:
-        app: my-app
+        app: my-express-app
     spec:
       containers:
-      - name: my-app
+      - name: my-express-app
         image: <your-docker-image>
         ports:
         - containerPort: 3000
@@ -28,12 +28,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-app-service
+  name: my-express-app-service
 spec:
   selector:
-    app: my-app
+    app: my-express-app
   ports:
     - protocol: TCP
-      port: 80
+      port: 3000
       targetPort: 3000
   type: LoadBalancer

@@ -39,4 +39,5 @@ app.get('/:email', (req, res) => {
 
 app.listen(3000, () => {
     console.log('Server started on port 3000');
+    console.log("URL: http://localhost:3000");
 });
