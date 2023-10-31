@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-express-app
-        image: <your-docker-image>
+        image: siddharthsutar/myvulapp22
         ports:
         - containerPort: 3000
         resources:
