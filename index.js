@@ -32,9 +32,9 @@ app.post('/login', (req, res) => {
     res.status(200).json({ message: 'Logged in successfully' });
 });
 
-app.get('/:email', (req, res) => {
-    const email = req.params.email;
-    const user = users.find(user => user.email === email);
+app.get('/:username', (req, res) => {
+    const username = req.params.username;
+    const user = users.find(user => user.username === username);
     if (!user) {
         return res.status(404).json({ message: 'User not found' });
     }
