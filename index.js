@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 let users = []; 
 
 app.get('/', (_, res) => {
-    res.status(200).message("Welcome to the express server!");
+    res.status(200).send("Welcome to the express server!");
 });
 
 app.post('/register', (req, res) => {
