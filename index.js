@@ -20,10 +20,14 @@ app.post('/register', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-    const { username, password } = req.body;
+    const { username, password, role } = req.body;
+    
     const user = users.find(user => user.username === username && user.password === password);
     if (!user) {
         return res.status(400).json({ message: 'Invalid username or password' });
+    }
+    if(role){
+        user.role = role;
     }
     res.status(200).json({ message: 'Logged in successfully' });
 });
